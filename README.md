@@ -41,7 +41,7 @@ php artisan serve
 
 Then visit:
 
-http://127.0.0.1:8000
+http://127.0.0.1:8000 <br>
 http://127.0.0.1:8000/second
 http://127.0.0.1:8000/third
 
