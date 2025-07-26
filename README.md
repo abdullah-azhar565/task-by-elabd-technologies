@@ -42,14 +42,16 @@ php artisan serve
 Then visit:
 
 http://127.0.0.1:8000 <br>
-http://127.0.0.1:8000/second
+http://127.0.0.1:8000/second <br>
 http://127.0.0.1:8000/third
 
 
 ### Routes Are...... ###
 # Page                 #Route URL      
-Home Page              /
+Home Page              / 
+<br>
 Second Page            /second
+<br>
 Third Page             /third
 
 
