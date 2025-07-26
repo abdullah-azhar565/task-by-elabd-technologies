@@ -14,6 +14,7 @@ This is a Laravel-based frontend clone inspired by **grailed.com**, developed as
 ### 1️⃣ Clone the GitHub Repository
 
 git clone https://github.com/abdullah-azhar565/task-by-elabd-technologies.git
+<br>
 cd task-by-elabd-technologies
 
 ### 2️⃣ Install PHP Dependencies using Composer
