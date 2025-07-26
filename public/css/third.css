@@ -28,7 +28,55 @@
     gap: 125px;
 }
 /* Bread crumb  */
+/* Mobile Responsive Styles */
+@media (max-width: 767.98px) {
+    .breadcrumb-wrapper {
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Keep items in single line */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        padding-bottom: 10px; /* Space for scrollbar */
+    }
 
+    .breadcrumb-wrapper .container {
+        display: inline-block; /* Keep container inline */
+        width: auto; /* Don't restrict width */
+        padding: 0 15px; /* Add side padding */
+    }
+
+    .breadcrumb {
+        display: inline-flex; /* Keep items in line */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    .breadcrumb-item {
+        display: inline-block; /* Keep items inline */
+        float: none; /* Reset any floats */
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .breadcrumb-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Optional: Add gradient fade to indicate scrollable content */
+    .breadcrumb-wrapper {
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 15px,
+            black 85%,
+            transparent
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 15px,
+            black 85%,
+            transparent
+        );
+    }
+}
 /* ---------------------------------------------------------  */
 /* Product Detail Section */
 .product-detail-section {
@@ -73,14 +121,12 @@
 /* Product Info Sidebar */
 .product-info {
     padding-left: 20px;
-
 }
 
 .product-title {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 5px;
-    
 }
 
 .product-brand {
@@ -124,46 +170,71 @@
     margin-bottom: 25px;
 }
 
-.purchase-btn,
-.offer-btn,
-.message-btn {
+.purchase-btn {
     padding: 12px 0;
     font-size: 16px;
     font-weight: bold;
     background-color: black;
     color: white;
     border: none;
-    border-radius: 4px;
+
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+.offer-btn {
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    border: 1px solid #e1e1e1;
+
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+.message-btn {
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    border: 1px solid #e1e1e1;
+
     cursor: pointer;
     text-transform: uppercase;
     text-align: center;
     transition: background-color 0.3s;
 }
 
-.purchase-btn:hover,
 .offer-btn:hover,
 .message-btn:hover {
-    background-color: #333;
+    border-color: black;
 }
 
 .auth-status {
     padding: 15px;
-    background-color: #f9f9f9;
+    background-color: white;
+    border: 1px solid #e1e1e1;
     border-radius: 4px;
 }
 
 .auth-status .badge {
-    background-color: #4caf50;
-    color: white;
+    /* background-color: #4caf50; */
+    color: black;
+    font-weight: bold;
     padding: 3px 8px;
-    font-size: 12px;
+    font-size: 18px;
     border-radius: 4px;
     margin-right: 8px;
 }
 
 .auth-status p {
-    font-size: 13px;
-    color: #666;
+    font-size: 14px;
+    color: black;
     margin-top: 8px;
     line-height: 1.4;
 }
@@ -172,7 +243,123 @@
     color: #0066cc;
     text-decoration: underline;
 }
+/* Add these new styles to your existing CSS */
 
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.product-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn svg {
+    transition: all 0.2s ease;
+}
+
+.icon-btn:hover svg {
+    transform: scale(1.1);
+}
+
+.save-btn svg {
+    stroke: black;
+}
+
+.heart-btn svg {
+    stroke: black;
+}
+
+/* Keep all your existing CSS below */
+/* Add these new styles to your existing CSS */
+
+/* Similar listings section */
+.similar-listings {
+    margin-top: 30px;
+}
+
+.similar-listings h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Seller info section */
+.seller-info {
+    margin: 25px 0;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+}
+
+.seller-info h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.seller-info p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Trusted seller section */
+.trusted-seller {
+    margin: 25px 0;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+}
+
+.trusted-seller p:first-child {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Seller feedback section */
+.seller-feedback {
+    margin: 25px 0;
+}
+
+.seller-feedback h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.feedback-item {
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.feedback-item p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+.see-all-btn a {
+    color: #00f;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* Keep all your existing CSS as is */
 /* Responsive Tweaks */
 @media (max-width: 991px) {
     .thumbnails {
@@ -212,4 +399,519 @@
 }
 .free-shipping-color {
     background-color: #0f0;
+}
+
+/* Keep all your existing CSS below */
+.related-designers .swiper {
+    position: relative;
+}
+
+.related-designers .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+}
+
+.section-related-designers-heading {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.card {
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card .btn {
+    background-color: black;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card .btn:hover {
+    background-color: #555;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: black;
+    background-color: white;
+    font-size: 10px !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    top: var(--swiper-navigation-top-offset, 65%) !important;
+}
+
+.swiper-slide-active {
+    margin-right: 12px !important;
+}
+.dual-image-container img {
+    border-radius: 0px !;
+}
+
+.card-img,
+.card-img-top {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+/* Mobile Responsive Styles */
+@media (max-width: 767.98px) {
+    .related-designers .container {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 100%;
+    }
+
+    .section-related-designers-heading {
+        padding-left: 15px;
+        font-size: 18px;
+    }
+
+    .related-designers .swiper {
+        padding-left: 15px; /* Add some padding to first item */
+    }
+
+    .related-designers .swiper-slide {
+        width: 140px; /* Slightly smaller cards on mobile */
+        margin-right: 10px !important;
+    }
+
+    .related-designers .swiper-slide:last-child {
+        margin-right: 15px !important; /* Add space after last item */
+    }
+
+    /* Hide navigation arrows */
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+
+    /* Adjust card styles */
+    .dual-image-container .card-img {
+        height: 100px; /* Slightly shorter images */
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+
+    .card-text {
+        font-size: 11px;
+    }
+
+    .card .btn {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 480px) {
+    .related-designers .swiper-slide {
+        width: 140px !important;
+    }
+
+    .dual-image-container .card-img {
+        height: 90px;
+    }
+}
+/* Add this new style */
+.single-image-container {
+    width: 100%;
+    height: 150px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.single-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Modify the swiper settings */
+.related-designers-swiper {
+    padding: 0 20px; /* Add padding to show partial next card */
+}
+
+.swiper-slide {
+    width: calc(20% - 16px) !important; /* 5 cards with some spacing */
+    margin-right: 16px !important;
+}
+
+/* Keep all your existing CSS below */
+/* Simple Card Styles */
+.simple-card {
+    width: 100%;
+    background: white;
+
+    overflow: hidden;
+}
+
+.simple-card-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.simple-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.simple-card-content {
+    padding: 12px;
+}
+
+.brand-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.price {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.price-container {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.discounted-price {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.discount {
+    font-size: 12px;
+    color: #f00;
+    font-weight: 500;
+}
+
+/* Swiper Adjustments */
+.related-designers-swiper {
+    padding: 0 20px;
+}
+
+.swiper-slide {
+    width: 180px !important; /* Fixed width for cards */
+    margin-right: 12px !important;
+}
+
+/* Keep existing swiper navigation styles */
+.swiper-button-next,
+.swiper-button-prev {
+    /* Your existing styles */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .swiper-slide {
+        width: 160px !important;
+    }
+
+    .simple-card-image {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper-slide {
+        width: 140px !important;
+    }
+
+    .simple-card-image {
+        height: 130px;
+    }
+} /* Mobile Touch-Scroll Styles */
+@media (max-width: 767.98px) {
+    .related-designers-swiper {
+        padding: 0 15px;
+        overflow: visible; /* Allow cards to extend beyond container */
+    }
+
+    .related-designers-swiper .swiper-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        width: auto;
+        padding-bottom: 15px; /* Space for scroll */
+    }
+
+    .related-designers-swiper .swiper-slide {
+        width: 140px !important;
+        flex-shrink: 0;
+        margin-right: 10px !important;
+    }
+
+    /* Enable touch scrolling */
+    .related-designers-swiper {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .related-designers-swiper::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Optional: Add gradient fade to indicate scrollable content */
+    .related-designers-swiper {
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 15px,
+            black 85%,
+            transparent
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 15px,
+            black 85%,
+            transparent
+        );
+    }
+
+    /* Hide navigation arrows on mobile */
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 480px) {
+    .related-designers-swiper .swiper-slide {
+        width: 130px !important;
+    }
+
+    .simple-card-image {
+        height: 120px;
+    }
+
+    .brand-name,
+    .price,
+    .original-price,
+    .discounted-price {
+        font-size: 13px;
+    }
+
+    .discount {
+        font-size: 11px;
+    }
+}
+
+/* --------------------------------------------------  */
+/* Related Searches  */
+.related-searches-section {
+    padding: 30px 0;
+}
+
+.section-heading {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.search-tags-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.search-tags-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.search-tags-track {
+    display: flex;
+    gap: 15px;
+    width: max-content;
+    padding-bottom: 10px; /* Space for scroll */
+}
+
+.search-tag {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: white;
+    color: #333;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    border: 1px solid #e1e1e1 !important;
+}
+
+.search-tag:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+/* For touch devices - show scroll hint */
+@media (hover: none) {
+    .search-tags-container {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: scroll;
+        cursor: grab;
+    }
+}
+/* Related Searches  */
+
+/* ---------------------------------------------------------  */
+/* Articles Section */
+.articles-section {
+    padding: 40px 0;
+}
+
+.articles-heading {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+/* Cards Container */
+.article-cards-container {
+    width: 100%;
+    overflow: hidden; /* Hide any overflow */
+    position: relative;
+}
+
+/* Cards Scroller */
+.article-cards-scroller {
+    display: flex;
+    gap: 20px; /* Space between cards */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding-bottom: 15px; /* Space for scroll */
+}
+
+.article-cards-scroller::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+/* Individual Cards */
+.article-card {
+    flex: 0 0 230px; /* Fixed width, won't shrink or grow */
+    overflow: hidden; /* Hide any content overflow */
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-image {
+    width: 280px; /* Fixed width */
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.article-tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.article-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #000;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .article-card {
+        flex: 0 0 240px;
+    }
+    .article-image {
+        width: 240px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .article-card {
+        flex: 0 0 220px;
+    }
+    .article-image {
+        width: 220px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 576px) {
+    .article-card {
+        flex: 0 0 200px;
+    }
+    .article-image {
+        width: 200px;
+        height: 140px;
+    }
 }

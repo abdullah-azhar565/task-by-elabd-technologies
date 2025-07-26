@@ -321,8 +321,7 @@
     </div>
 </nav>
 
-{{-- Mobile SideBar --}}
-<!-- Mobile Sidebar -->
+
 <!-- Mobile Sidebar -->
 <div class="mobile-sidebar position-fixed top-0 start-0 bg-white vh-100 shadow"
     style="width: 335px; z-index: 1050; transform: translateX(-100%); transition: transform 0.3s ease; border-right: 1px solid #dee2e6;">
