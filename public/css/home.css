@@ -1,0 +1,358 @@
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 388px;
+    /* overflow: hidden; */
+}
+
+.hero-section .swiper-slide img {
+    height: 388px;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+    font-size: 20px;
+}
+
+.swiper-pagination-bullet {
+    background: white;
+    opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+    background: white;
+    opacity: 1;
+}
+/* White dots */
+.swiper-pagination-bullet {
+    background-color: white !important;
+    opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: white !important;
+    opacity: 1;
+}
+.hero-gradient-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.45)
+    );
+    z-index: 1;
+}
+
+.slide-caption {
+    z-index: 2;
+    position: relative;
+}
+
+.hero-btn {
+    padding: 14px 33px;
+    font-size: 20px;
+}
+/* Make swiper arrows smaller */
+.swiper-button-next,
+.swiper-button-prev {
+    font-size: 20px; /* Reduce icon size */
+    width: 30px; /* Optional: reduce arrow box width */
+    height: 30px; /* Optional: reduce arrow box height */
+}
+
+/* Optional: reduce arrow icons (they use pseudo-elements) */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 20px !important; /* This controls the actual arrow */
+}
+@media (max-width: 767.98px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+}
+@media (max-width: 767.98px) {
+    .hero-section {
+        height: 388px; /* Reduce overall height on mobile */
+    }
+
+    .hero-section .swiper-slide img {
+        height: 388px; /* Match image height to section */
+        object-fit: cover;
+    }
+
+    .slide-caption h2 {
+        font-size: 28px !important; /* Smaller heading */
+        margin-bottom: 30px !important;
+    }
+
+    .slide-caption p {
+        font-size: 19px !important; /* Smaller subtext */
+    }
+
+    .hero-btn {
+        font-size: 14px;
+        padding: 10px 24px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important; /* Hide arrows on mobile */
+    }
+
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px !important;
+    }
+    .slide-caption {
+        width: 400px !important;
+    }
+}
+
+/* Trading Section CSS Starts  */
+/* Equal image height for grid */
+.trending-section .row.g-2 .col-6 img {
+    height: 210px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 2px;
+    position: relative;
+}
+
+/* View More overlay */
+.view-more-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.4); /* subtle dark overlay */
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    z-index: 2;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+/* Show overlay always (not only on hover) */
+.position-relative .view-more-overlay {
+    opacity: 1;
+}
+
+/* Optional: smooth hover effect */
+.position-relative:hover .view-more-overlay {
+    background: rgba(20, 20, 20, 0.6);
+}
+.trending-sub-heading {
+    font-size: 12px;
+    margin-bottom: 0px !important;
+}
+.trending-heading {
+    font-size: 18px;
+}
+.trending-container {
+    max-width: 76.5rem !important;
+}
+@media (max-width: 767.98px) {
+    .trending-container {
+        max-width: 25rem !important;
+    }
+}
+@media (max-width: 400px) {
+    .trending-container {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}
+@media (max-width: 767.98px) {
+    .trending-section .col-md-4 .row.g-2 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* First 2 images: bigger, side by side */
+    .trending-section .col-md-4 .row.g-2 .col-6:nth-child(1),
+    .trending-section .col-md-4 .row.g-2 .col-6:nth-child(2) {
+        width: 50%;
+        padding: 4px;
+    }
+
+    /* Bottom 3 images: all small, 3 per row */
+    .trending-section .col-md-4 .row.g-2 .col-6:nth-child(3),
+    .trending-section .col-md-4 .row.g-2 .col-6:nth-child(4),
+    .trending-section .col-md-4 .row.g-2 .col-6:nth-child(5) {
+        width: 33.333%;
+        padding: 4px;
+    }
+
+    /* All images styling */
+    .trending-section .col-md-4 .row.g-2 img {
+        height: 110px;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 3px;
+    }
+    .mob-height img {
+        height: 230px !important;
+    }
+
+    /* Make hidden mobile image visible */
+    .mobile-hidden-img {
+        display: block !important;
+    }
+
+    /* Make second bottom image's overlay hidden (i.e., the 4th image) */
+    .trending-section
+        .col-md-4
+        .row.g-2
+        .col-6:nth-child(4)
+        .view-more-overlay {
+        display: none !important;
+    }
+
+    .view-more-overlay {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Trading Section CSS end  */
+
+/* -------------------------------------------------------------------------------  */
+.accessories-section .row.g-2 img {
+    height: 216px; /* You can adjust this height as needed */
+    width: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+@media (max-width: 767.98px) {
+    .home-big-img {
+        height: 412px;
+        margin-top: 30px;
+    }
+    .accessories-editorial-card {
+        max-width: 345px !important;
+    }
+}
+@media (max-width: 767.98px) {
+    .accessories-section .col-md-4 .row.g-2 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* First 2 images = larger (50% width) */
+    .accessories-section .col-md-4 .row.g-2 .col-6:nth-child(1),
+    .accessories-section .col-md-4 .row.g-2 .col-6:nth-child(2) {
+        width: 50%;
+        padding: 4px;
+    }
+
+    /* Last 3 images = smaller (33.33% width) */
+    .accessories-section .col-md-4 .row.g-2 .col-6:nth-child(3),
+    .accessories-section .col-md-4 .row.g-2 .col-6:nth-child(4),
+    .accessories-section .col-md-4 .row.g-2 .col-6:nth-child(5) {
+        width: 33.333%;
+        padding: 4px;
+    }
+
+    /* Set small height for last 3 */
+    .accessories-section .col-md-4 .row.g-2 .col-6:nth-child(3) img,
+    .accessories-section .col-md-4 .row.g-2 .col-6:nth-child(4) img,
+    .accessories-section .col-md-4 .row.g-2 .col-6:nth-child(5) img {
+        height: 110px;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 3px;
+    }
+
+    /* Optional: view more overlay adjustments */
+    .view-more-overlay {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Show hidden image */
+    .mobile-hidden-img {
+        display: block !important;
+    }
+
+}
+
+/* ShopWear Section  */
+
+/* .shopwear-section {
+  padding: 2rem 0;
+} */
+
+.shopwear-heading {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.shopwear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.shopwear-item {
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+}
+
+.shopwear-item img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+.shopwear-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+@media (max-width: 767.98px) {
+    .shopwear-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on mobile */
+        gap: 6px; /* Reduce space between items */
+        margin-bottom: 1rem; /* Reduce bottom margin */
+    }
+
+    .shopwear-item {
+        height: 100px; /* Slightly smaller box height */
+        padding: 0; /* No internal padding */
+    }
+
+    .shopwear-item img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    .shopwear-heading {
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.6rem;
+        padding-left: 0.5rem;
+    }
+
+    .shopwear-container {
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+}
+
+
+/* ShopWear Section  */
